@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <title>7II</title>
@@ -16,13 +15,54 @@
     <form action="añadir">
         <input type="text" placeholder="Tarea a realizar">
         <button type="submit">Agregar</button>
-        <ul> 
-            <li><input type="checkbox"> Tarea 1 - Ver el partido <button type="reset">Quitar</button></li> 
-            <li><input type="checkbox"> Tarea 2 - Andar en bicicleta <button type="reset">Quitar</button></li>
-            <li><input type="checkbox"> Tarea 3 - Comer un guiso <button type="reset">Quitar</button></li>
-            </ul>
+
+        <table class="table table-striped">
+            <thead>
+                <tr class='tabla'>
+                    <th >Tarea</th>
+                    <th >Comando</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>
+                        <input type="checkbox"> Tarea 1 - Ver el partido 
+                    </td>
+                    <td>
+                        <button type="reset">Quitar</button>
+                    </td>
+                </tr >
+                <tr>
+                    <td>
+                        <input type="checkbox"> Tarea 2 - Andar en bicicleta 
+                    </td>
+                    <td>
+                        <button type="reset">Quitar</button>
+                    </td>
+
+                </tr >
+                <tr>
+                    <td>    
+                        <input type="checkbox"> Tarea 3 - Comer un guiso 
+                    </td>
+                    <td>
+                        <button type="reset">Quitar</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <strong>Cantidad de Tareas</strong>
+                    </td>
+                    <td>3</td>
+                </tr>
+            </tfoot>
+
+
+            
+        </table>
+        
     </form>
-
-
 </body>
 </html>
