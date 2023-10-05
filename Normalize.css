@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(8, 7, 7);
+}
+h1{
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+
+.input-group{
+    width: 26%;
+    color: white;
+    margin-left: 37%;
+    margin-top: 3%;
+}
+.form-control{
+    text-align: center;
+    border-radius: 20px;
+}
+.btn-default{
+    background-color: rgb(255, 72, 0);
+    color: white;  
+    border-radius: 20px;
+}
+
+.table{
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 37%;
+    width: 26%;
+    border-radius: 20px;
+    display: block;
+    block-size: 40px;
+    border-bottom: none;
+}
+.btn-defaulttable{
+    background-color: rgb(255, 72, 0);
+    color: white;  
+    border-radius: 20px;
+    
+}
