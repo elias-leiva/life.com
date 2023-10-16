@@ -17,12 +17,14 @@
 
     <h1>Lista de tareas de Elías</h1>
 
-    <div class="input-group mb-3 mt-5">
+    <div class="input-group mb-4 mt-5">
         <input type="text" class="form-control" placeholder="Tarea a realizar" aria-label="Tarea a realizar">
-        <button class="btn btn-danger btn-rounded" type="button">Agregar</button>
+        <button class="btn btn-danger rounded-pill" type="button">Agregar</button>
     </div>
-    <table class="table table-borderless  table-sm table-dark">
+
+    <table class="table table-borderless table-sm table-dark">
         <tbody>
+
             <tr>
                 <td>
                     <div class="input-group mt-3 mb-3">
@@ -32,7 +34,7 @@
                         <label for="" class="form-control">
                             Tarea 1 - Comer
                         </label>
-                        <button class="btn btn-danger btn-rounded" type="button">Quitar</button>
+                        <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
                     </div>
                 </td>
             </tr>
@@ -45,7 +47,7 @@
                         <label for="" class="form-control">
                             Tarea 2 - Comer
                         </label>
-                        <button class="btn btn-danger btn-rounded rounded-pill" type="button">Quitar</button>
+                        <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
                     </div>
                 </td>
             </tr>
@@ -58,36 +60,29 @@
                         <label for="" class="form-control">
                             Tarea 3 - Comer
                         </label>
-                        <button class="btn btn-danger btn-rounded" type="button">Quitar</button>
+                        <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
                     </div>
-
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div class="input-group mt-3 mb-3">
-                        <textarea class="form-control" aria-label="With textarea">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac elit ut velit iaculis iaculis.
-                                    Vivamus eget urna lorem. Donec eget mauris non sapien malesuada viverra. Quisque auctor,
-                                    erat vel euismod tempor, diam arcu consectetur mi, a porttitor dolor velit a purus. 
-                                    Nullam porta, ligula id sodales laoreet, felis ante consectetur diam, sit amet bibendum neque est et justo.
-                                    Proin ex risus, aliquet ac gravida vel, elementum eget magna. Nunc purus magna, mattis ac aliquam id,
-                                    congue non libero. Donec vel metus ac dolor accumsan vestibulum. 
-                                </textarea>
-                    </div>
-                    <div class="input-group-text">
-                        <div class=" bg-danger">
-                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="tarea">
-
+                    <div class="d-flex flex-column mb-3 text-bg-light rounded-3">
+                        <div class="p-2">
+                            <textarea class="form-control" aria-label="With textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac elit ut velit iaculis iaculis.Vivamus eget urna lorem. Donec eget mauris non sapien malesuada viverra. Quisque auctor, erat vel euismod tempor, diam arcu consectetur mi, a porttitor dolor velit a purus. Nullam porta, ligula id sodales laoreet, felis ante consectetur diam, sit amet bibendum neque est et justo. Proin ex risus, aliquet ac gravida vel, elementum eget magna. Nunc purus magna, mattis ac aliquam id, congue non libero. Donec vel metus ac dolor accumsan vestibulum. 
+                            </textarea>
                         </div>
-
-                        <button class="btn btn-danger btn-rounded" type="button">Quitar</button>
+                        <div class="p-2">
+                            <div class="input-group-text border-0">
+                                <div class="bg-danger">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="tarea">
+                                </div>
+                                <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
+                            </div>
+                        </div>
                     </div>
-
-
                 </td>
-
             </tr>
+
         </tbody>
     </table>
 </body>
