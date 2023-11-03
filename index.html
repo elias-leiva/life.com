@@ -2,125 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
-    <title>Lista de tareas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="icon/bootstrap-icons.min.css">  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
+  <title>Home</title>
 </head>
 
-<body class="text-bg-dark">
+<body class="text-bg-light">
+  <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title bi bi-body-text mt-3" id="offcanvasLabel"> Tecnosoftware - Sinergia</h5>
+      <button type="button" class="btn-close mt-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body text-bg-primary mt-3">
+      <h1 class="bi bi-text-left mt-5"> Bienvenido a life.com, el mejor sitio web para organizar tu dia a dia.</h1>
+    </div>
+  </div>
 
-    <body class="text-bg-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark text-bg-primary">
+    <div class="container-fluid mt-2 mb-2 p-1">
+      <h4 class="px-4 bi bi-cup-hot-fill"> life.com</h4>
 
-        <div class="bg-danger">
-            <nav class="navbar navbar-expand-sm navbar-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="home.html">Sinergia / Tecnosoftware</a>
-                    <button class="navbar-toggler rounded-pill" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active nav-tabs" href="index.html">Tareas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="socialmedia.html">Redes Sociales</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+      <button class="navbar-toggler rounded-pill bi bi-three-dots text-bg-light me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggle"></span>
+          </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto px-5">
+          <li class="nav-item">
+            <a class="nav-link active bi bi-house" aria-current="page" href="index.html"> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active bi bi-check2-circle" href="list.html"> To do list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active bi bi-blockquote-left" href="notes.html"> Notes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active bi bi-calendar2-plus" href="calendar.html"> Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active bi bi-piggy-bank" href="finances.html"> Finances</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active bi bi-file-person" href="diary.html"> Personal diary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active bi bi-person-check" href="socialmedia.html"> Social networks</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <main>
+    <img src="img/1.png.png" class="img-fluid" alt="...">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+
+      <div class="col-md-6 p-lg-5 mx-auto my-5">
+        <h1 class="display-3 fw-bold">Designed for engineers</h1>
+        <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
+        <div class="d-flex gap-3 justify-content-center lead fw-normal">
+          <a class="icon-link" href="#">
+            Learn more
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+          <a class="icon-link" href="#">
+            Buy
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
         </div>
-
-        <div class="text-bg-dark container text-center col-sm-4 mt-5">
-            <h1>Lista de tareas de Elias</h1>
-            <table class="table table-borderless table-sm table-dark ">
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="d-flex justify-content-sm-between text-bg-light rounded-pill mb-3 mt-5">
-                                <input type="text" class="form-control rounded-4 border-0"
-                                    placeholder="Tarea a realizar" aria-label="Tarea a realizar">
-                                <button class="btn btn-danger rounded-pill" type="button">Agregar</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="d-flex justify-content-sm-between text-bg-light rounded-pill mb-3 mt-5">
-                                <div class="input-group-text border-0 rounded-4">
-                                    <input class="bg-danger form-check-input mb-1" style="width: 20px; height: 20px;"
-                                        type="checkbox" value="" aria-label="tarea">
-                                </div>
-                                <label class="form-control border-0">
-                                    Lorem ipsum dolor
-                                </label>
-                                <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="d-flex justify-content-sm-between text-bg-light rounded-pill mb-3 mt-2">
-                                <div class="input-group-text border-0 rounded-4">
-                                    <input class="bg-danger form-check-input mb-1" style="width: 20px; height: 20px;"
-                                        type="checkbox" value="" aria-label="tarea">
-                                </div>
-                                <label class="form-control border-0">
-                                    Lorem ipsum dolor
-                                </label>
-                                <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="d-flex justify-content-sm-between text-bg-light rounded-pill mb-4 mt-2">
-                                <div class="input-group-text border-0 rounded-4">
-                                    <input class="bg-danger form-check-input mb-1" style="width: 20px; height: 20px;"
-                                        type="checkbox" value="" aria-label="tarea">
-                                </div>
-                                <label class="form-control border-0">
-                                    Lorem ipsum dolor
-                                </label>
-                                <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="d-flex flex-column mb-3 text-bg-light rounded-3 mt-4">
-                                <div class="p-2 mt-2">
-                                    <textarea class="form-control border-0" aria-label="With textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac elit ut velit iaculis iaculis.Vivamus eget urna lorem. Donec eget mauris non sapien malesuada viverra. Quisque auctor, erat vel euismod tempor, diam arcu consectetur mi, a porttitor dolor velit a purus. Nullam porta, ligula id sodales laoreet, felis ante consectetur diam, sit amet bibendum neque est et justo. Proin ex risus, aliquet ac gravida vel, elementum eget magna. Nunc purus magna, mattis ac aliquam id, congue non libero. Donec vel metus ac dolor accumsan vestibulum. 
-                            </textarea>
-                                </div>
-                                <div class="p-2">
-                                    <div class="input-group-text border-0">
-                                        <input class="bg-danger form-check-input" style="width: 20px; height: 20px;"
-                                            type="checkbox" value="" aria-label="tarea">
-                                        <div class="w-100">
-                                        </div>
-                                        <button class="btn btn-danger rounded-pill" type="button">Quitar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+      </div>
+      <div class="product-device shadow-sm d-none d-md-block"></div>
+      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+  
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
         </div>
-    </body>
+        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+  
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+  
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+  
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+  </main> 
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>
