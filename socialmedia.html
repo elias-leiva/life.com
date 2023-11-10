@@ -49,14 +49,51 @@
       </div>
     </div>
   </nav>
-        
+    <div id="pokemonData">
+
+    </div>
+          
       </div>
     </div>
   </nav>
+  <script type="text/javascript">
+      function callEndpointPokeapi() {
+        let url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+          fetch(url)
+          .then(res => res.json())
+          .then (function (data) {
+                appendData(data);
+            })
+      }
 
- 
+    callEndpointPokeapi();
+
+    function appendData(data) {
+        var mainContainer = document.getElementById("pokemonData");
+        var h1 = document.createElement("H1");
+        h1.innerHTML = data.name;
+        mainContainer.appendChild(h1);
+        for (var i = 0; i < data.abilities.length; i++) {
+              var paragraph = document.createElement("p");
+              paragraph.innerHTML = data.abilities[i].ability.name;
+              mainContainer.appendChild(paragraph);
+            }
+        var h2 = document.createElement("H2");
+        h2.innerHTML = "Stats";
+        mainContainer.appendChild(h2);
+        for (var i = 0; i < data.stats.length; i++) {
+              var paragraph = document.createElement("p");
+              paragraph.innerHTML = data.stats[i].stat.name;
+              mainContainer.appendChild(paragraph);
+            }
+        }
+    </script>
 
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+
+
+
