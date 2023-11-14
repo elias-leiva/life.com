@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="icon/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
-    <title>To do list</title>
+    <title>PokemonApi</title>
 </head>
 
 <body class="text-bg-primary">
     <nav class="navbar navbar-expand-sm navbar-dark text-bg-primary">
         <div class="container-fluid mt-2 mb-2 p-1">
             <h4 class="px-4 bi bi-cup-hot-fill"> life.com</h4>
-            <h4 class="bi bi-arrow-right-circle-fill"> Social</h4>
+            <h4 class="bi bi-arrow-right-circle-fill"> PokemonApi</h4>
 
             <button class="navbar-toggler rounded-pill bi bi-three-dots text-bg-light me-3" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggle"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto  px-4">
                     <li class="nav-item">
@@ -58,21 +59,49 @@
             </div>
         </div>
     </nav>
-  
-    <div class="container text-center col-sm-3 px-3 mt-5">
 
-      <div class="card rounded-3 text-bg-white">      
-          <div class="card-body">
-            <h1 class="card-title mt-2">Redes Sociales</h1>
-            <p class="card-text mb-3 mt-3">Amet consectetur adipisicing elit. Dolore cumque distinctio veritatis quisquam praesentium at tempore! Culpa, sequi labore! Dolore debitis nam aspernatur iste.</p>
-      </div>      
+    <div class="bg-danger">
+
+    <div class="mt-5 text-bg-primary">
+    <div id="pokemonData" class="text-center">
+        <h1 class="mb-4">Consumo de la Api Pokemon</h1>
     </div>
-
-    <div class="text-bg-light rounded-3 fs-1 mt-2">
-      <a class="bi bi-instagram text-danger" href="https://www.instagram.com/tecnoleiva/"></a>
-      <a class="bi bi-facebook text-primary"  href="https://www.facebook.com/tecnoleiva?mibextid=ZbWKwL"></a>
+    </div>
     </div>
   
+    <script type="text/javascript">
+      function callEndpointPokeapi() {
+        let url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+        fetch(url)
+          .then(res => res.json())
+          .then(function (data) {
+            appendData(data);
+          })
+      }
+  
+      callEndpointPokeapi();
+  
+      function appendData(data) {
+        var mainContainer = document.getElementById("pokemonData");
+        var h1 = document.createElement("H1");
+        h1.innerHTML = data.name;
+        mainContainer.appendChild(h1);
+        for (var i = 0; i < data.abilities.length; i++) {
+          var paragraph = document.createElement("p");
+          paragraph.innerHTML = data.abilities[i].ability.name;
+          mainContainer.appendChild(paragraph);
+        }
+        var h2 = document.createElement("H2");
+        h2.innerHTML = "Stats";
+        mainContainer.appendChild(h2);
+        for (var i = 0; i < data.stats.length; i++) {
+          var paragraph = document.createElement("p");
+          paragraph.innerHTML = data.stats[i].stat.name;
+          mainContainer.appendChild(paragraph);
+        }
+      }
+    </script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 

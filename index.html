@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="icon/bootstrap-icons.min.css">  
+  <link rel="stylesheet" href="icon/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
   <title>Home</title>
@@ -26,12 +26,14 @@
     <div class="container-fluid mt-2 mb-2 p-1">
       <h4 class="px-4 bi bi-cup-hot-fill"> life.com</h4>
 
-      <button class="navbar-toggler rounded-pill bi bi-three-dots text-bg-light me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler rounded-pill bi bi-three-dots text-bg-light me-3" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggle"></span>
-          </button>
+      </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto px-5">
+        <ul class="navbar-nav ms-auto  px-4">
           <li class="nav-item">
             <a class="nav-link active bi bi-house" aria-current="page" href="index.html"> Home</a>
           </li>
@@ -44,111 +46,34 @@
           <li class="nav-item">
             <a class="nav-link active bi bi-calendar2-plus" href="calendar.html"> Calendar</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active bi bi-piggy-bank" href="finances.html"> Finances</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active bi bi-file-person" href="diary.html"> Personal diary</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active bi bi-person-check" href="socialmedia.html"> Social networks</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Más opciones
+            </a>
+            <ul class="dropdown-menu text-bg-primary px-2">
+              <li><a class="nav-link active bi bi-piggy-bank" href="finances.html"> Finances</a></li>
+              <li><a class="nav-link active bi bi-file-person" href="diary.html"> Personal diary</a></li>
+              <li><a class="nav-link active bi bi-person-check" href="socialmedia.html"> Social networks</a></li>
+              <li>
+                <hr class="dropdown-divider bg-white">
+              </li>
+              <li><a class="nav-link active bi bi-command" href="pokeapi.html"> PokemonApi</a></li>
+            </ul>
+          <li class="nav-item px-3">
           </li>
         </ul>
-        
+
       </div>
     </div>
   </nav>
   <main>
-    <img src="img/1.png.png" class="img-fluid" alt="...">
+    <img src="img/1.png.png" class="img-fluid" alt="imgrepresentativa">
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
 
-      <div class="col-md-6 p-lg-5 mx-auto my-5">
-        <h1 class="display-3 fw-bold">Designed for engineers</h1>
-        <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
-        <div class="d-flex gap-3 justify-content-center lead fw-normal">
-          <a class="icon-link" href="#">
-            Learn more
-            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-          </a>
-          <a class="icon-link" href="#">
-            Buy
-            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-          </a>
-        </div>
+      <div class="col-md-8 p-lg-5 mx-auto mt-3">
+        <h1 class="display-2 fw-bold text-primary">En Life</h1>
+        <h3 class="fw-normal text-muted px-4 mt-2">Te ofrecemos un espacio digital diseñado para simplificar y mejorar tu vida diaria. Nuestra plataforma integra herramientas esenciales que te ayudarán a mantenerte organizado, productivo y centrado en lo que realmente importa.</h3>
       </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  </main> 
-
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
