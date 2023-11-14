@@ -57,10 +57,50 @@
       </div>
     </div>
   </nav>
+  <div id="info-dolar">
 
-  <div id="dolar-info">
   </div>
+  <table id="dolar-table">
 
+  </table>
+
+
+  <script type="text/javascript">
+    function callEndpointDolar() {
+      let url = 'https://dolarapi.com/v1/dolares';
+      fetch(url)
+        .then(res => res.json())
+        .then(function (data) {
+          appendData(data);
+        })
+    }
+
+    callEndpointDolar();
+
+    function appendData(data) {
+     var mainContainer =  document.getElementById("info-dolar")
+     var dolarTable = document.getElementById("dolar-table");
+      var h1 = document.createElement("H1");
+      h1.innerHTML = "Cotización del dolar del Día";
+      mainContainer.appendChild(h1);
+      for (var i = 0; i < data.length; i++) {
+            var row = dolarTable.insertRow(i);
+            var cellMoneda = row.insertCell(0);
+            cellMoneda.innerHTML = data[i].moneda;
+           var cellNombre = row.insertCell(1);
+            var cellCompra = row.insertCell(2);
+            var cellVenta = row.insertCell(3);
+            var cellFechaActualizacion = row.insertCell(4);
+
+            cellNombre.innerHTML = data[i].nombre;
+            cellCompra.innerHTML = data[i].compra;
+            cellVenta.innerHTML = data[i].venta;
+            cellFechaActualizacion.innerHTML = data[i].fechaActualizacion;
+            
+        }
+
+    }
+  </script>
 
 
 
