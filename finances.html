@@ -13,7 +13,7 @@
 
 <body class="text-bg-primary">
 
-  <nav class="navbar navbar-expand-sm navbar-dark text-bg-primary">
+  <nav class="navbar navbar-expand-sm navbar-dark text-bg-primary shadow-lg mb-5 rounded">
     <div class="container-fluid mt-2 mb-2 p-1">
       <h4 class="px-4 bi bi-cup-hot-fill"> life.com</h4>
       <h4 class="bi bi-arrow-right-circle-fill"> Finances</h4>
@@ -57,14 +57,14 @@
       </div>
     </div>
   </nav>
-  <div id="info-dolar">
-
+  <div class="container">
+  <div id="info-dolar" class="">
+    <h1 class="bi bi-bank2"> Dólar Hoy</h1>
   </div>
-  <table id="dolar-table">
 
+  <table id="dolar-table" class="badge text-bg-light shadow-lg p-2 rounded-3">
   </table>
-
-
+  </div>
   <script type="text/javascript">
     function callEndpointDolar() {
       let url = 'https://dolarapi.com/v1/dolares';
@@ -74,31 +74,37 @@
           appendData(data);
         })
     }
-
+  
     callEndpointDolar();
-
+  
     function appendData(data) {
-     var mainContainer =  document.getElementById("info-dolar")
-     var dolarTable = document.getElementById("dolar-table");
-      var h1 = document.createElement("H1");
-      h1.innerHTML = "Cotización del dolar del Día";
-      mainContainer.appendChild(h1);
+      var mainContainer =  document.getElementById("info-dolar")
+      var dolarTable = document.getElementById("dolar-table");
+  
+      dolarTable.innerHTML = '';
+  
+      var header = dolarTable.createTHead();
+      var row = header.insertRow(0);
+
+      var cellNombreHeader = row.insertCell(0);
+      var cellCompraHeader = row.insertCell(1);
+      var cellVentaHeader = row.insertCell(2);
+  
+      cellNombreHeader.innerHTML = "Tipo";
+      cellCompraHeader.innerHTML = "Compra";
+      cellVentaHeader.innerHTML = "Venta";
+  
       for (var i = 0; i < data.length; i++) {
-            var row = dolarTable.insertRow(i);
-            var cellMoneda = row.insertCell(0);
-            cellMoneda.innerHTML = data[i].moneda;
-           var cellNombre = row.insertCell(1);
-            var cellCompra = row.insertCell(2);
-            var cellVenta = row.insertCell(3);
-            var cellFechaActualizacion = row.insertCell(4);
+        var row = dolarTable.insertRow(i + 1);
+        var cellNombre = row.insertCell(0);
+        var cellCompra = row.insertCell(1);
+        var cellVenta = row.insertCell(2);
+  
+        cellNombre.innerHTML = data[i].nombre;
+        cellCompra.innerHTML = data[i].compra;
+        cellVenta.innerHTML = data[i].venta;
 
-            cellNombre.innerHTML = data[i].nombre;
-            cellCompra.innerHTML = data[i].compra;
-            cellVenta.innerHTML = data[i].venta;
-            cellFechaActualizacion.innerHTML = data[i].fechaActualizacion;
-            
-        }
-
+      }
     }
   </script>
 
