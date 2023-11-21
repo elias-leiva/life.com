@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="icon/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
-  <title>Calendar</title>
+  <title>Clime</title>
 </head>
 
 <body class="text-bg-primary">
 
-  <nav class="navbar navbar-expand-sm navbar-dark text-bg-primary shadow-lg mb-5 rounded">
+  <nav class="navbar navbar-expand-sm navbar-dark text-bg-primary shadow-lg rounded">
     <div class="container-fluid mt-2 mb-2 p-1">
       <h4 class="px-4 bi bi-cup-hot-fill"> life.com</h4>
-      <h4 class="bi bi-arrow-right-circle-fill"> Calendar</h4>
+      <h4 class="bi bi-arrow-right-circle-fill"> Finances</h4>
 
       <button class="navbar-toggler rounded-pill bi bi-three-dots text-bg-light me-3" type="button"
         data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -59,6 +59,69 @@
       </div>
     </div>
   </nav>
+
+  <main class="text-bg-light mt-5 p-5 col-sm-4 container rounded-5 shadow-lg">
+    <h1 class="display-1 bi bi-brightness-alt-high text-primary text-center"> Clime</h1>
+    <div class="search-form mt-3">
+      <form id="search-form">
+        <div class="searchbox p-3">
+          <input class="form-control container w-75 form-control-lg text-center shadow-lg" type="text" autocomplete="off" placeholder="Buscar ciudad..." class="search" id="searchbox" />
+        </div>
+      </form>
+    </div>
+
+    <div class="weather-card mt-4 text-bg-primary rounded-5 p-4 shadow-lg w-75 container" id="card">
+      <div class="temp mt-2 display-1 mb-4 text-white text-center  rounded-pill" id="temp"> 14c</div>
+      <div class="city mt-2 ms-5 bi bi-globe2" id="city"> Ciudad, Pais</div>
+      <div class="date mt-2 ms-5 bi bi-clock" id="date"> Ahora</div>
+      <div class="weather ms-5 bi bi-arrow-right-short mt-2" id="weather"> Sol</div>
+    </div>
+  </main>
+
+  <script type="text/javascript">
+
+    const api = {
+      key: '9e122cd782b2d0333f5fe4e7fa192062',
+      url: `https://api.openweathermap.org/data/2.5/weather`
+    }
+
+    const card = document.getElementById('card')
+
+    const city = document.getElementById('city');
+    const date = document.getElementById('date');
+    const temp = document.getElementById('temp');
+    const weather = document.getElementById('weather');
+    const range = document.getElementById('range');
+
+
+    async function search(query) {
+      try {
+        const response = await fetch(`${api.url}?q=${query}&appid=${api.key}&lang=es`);
+        const data = await response.json();
+        city.innerHTML = `${data.name}, ${data.sys.country}`;
+        data.innerHTML = (new Date()).toLocaleDateString();
+        temp.innerHTML = `${toCelsius(data.main.temp)}c`;
+        weather.innerHTML = data.weather[0].description;
+      } catch (err) {
+        console.log(err);
+        alert('Hubo un error');
+      }
+    }
+
+    function toCelsius(kelvin) {
+      return Math.round(kelvin - 273.15);
+    }
+
+    function onSubmit(event) {
+      event.preventDefault();
+      search(searchbox.value);
+    }
+
+    const searchform = document.getElementById('search-form');
+    const searchbox = document.getElementById('searchbox');
+    searchform.addEventListener('submit', onSubmit, true);
+  </script>
+
 
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>

@@ -44,6 +44,7 @@
             <ul class="dropdown-menu text-bg-primary px-2">
               <li><a class="nav-link active bi bi-piggy-bank" href="finances.html"> Finances</a></li>
               <li><a class="nav-link active bi bi-file-person" href="diary.html"> Personal diary</a></li>
+              <li><a class="nav-link active bi bi-brightness-alt-high" href="clime.html"> Clime</a></li>
               <li><a class="nav-link active bi bi-person-check" href="socialmedia.html"> Social networks</a></li>
               <li>
                 <hr class="dropdown-divider bg-white">
@@ -57,14 +58,25 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-  <div id="info-dolar" class="">
-    <h1 class="bi bi-bank2"> Dólar Hoy</h1>
+  <div class="container col-sm-6">
+    <div id="info-dolar">
+      <h1 class="bi bi-bank2"> Dólar Hoy</h1>
+    </div>  
+  
+    <table id="dolar-table" class="p table table-bordered border-primary shadow-lg w-50 mt-3 ">
+      <thead>
+        <tr>
+          <th id="0">Tipo</th>
+          <th class="text-center" id="1">Compra</th>
+          <th id="2" style="text-align: right;">Venta</th>
+        </tr>
+      </thead>
+      <tbody>
+    
+      </tbody>
+    </table>
   </div>
-
-  <table id="dolar-table" class="badge text-bg-light shadow-lg p-2 rounded-3">
-  </table>
-  </div>
+</div>
   <script type="text/javascript">
     function callEndpointDolar() {
       let url = 'https://dolarapi.com/v1/dolares';
@@ -78,36 +90,25 @@
     callEndpointDolar();
   
     function appendData(data) {
-      var mainContainer =  document.getElementById("info-dolar")
-      var dolarTable = document.getElementById("dolar-table");
-  
+      var dolarTable = document.getElementById("dolar-table").getElementsByTagName('tbody')[0];
       dolarTable.innerHTML = '';
   
-      var header = dolarTable.createTHead();
-      var row = header.insertRow(0);
-
-      var cellNombreHeader = row.insertCell(0);
-      var cellCompraHeader = row.insertCell(1);
-      var cellVentaHeader = row.insertCell(2);
-  
-      cellNombreHeader.innerHTML = "Tipo";
-      cellCompraHeader.innerHTML = "Compra";
-      cellVentaHeader.innerHTML = "Venta";
-  
-      for (var i = 0; i < data.length; i++) {
-        var row = dolarTable.insertRow(i + 1);
-        var cellNombre = row.insertCell(0);
-        var cellCompra = row.insertCell(1);
-        var cellVenta = row.insertCell(2);
+      for (var i = 0; i < data.length; i++) { 
+        var row = dolarTable.insertRow('i');
+        var cellNombre = row.insertCell('0');
+        var cellCompra = row.insertCell('1');
+        var cellVenta = row.insertCell('2');
   
         cellNombre.innerHTML = data[i].nombre;
-        cellCompra.innerHTML = data[i].compra;
-        cellVenta.innerHTML = data[i].venta;
-
+        cellCompra.innerHTML = '$' +  data[i].compra;
+        cellVenta.innerHTML = '$' + data[i].venta;
+        
+        cellCompra.style.textAlign = 'center';
+        cellVenta.style.textAlign = 'right';
       }
     }
   </script>
-
+  
 
 
 
